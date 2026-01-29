@@ -179,7 +179,7 @@ form.addEventListener('submit', (events) => {
     td3.textContent = officeValue;
     td4.textContent = Number(ageValue);
 
-    td5.textContent = Number(salaryValue).toLocaleString('en-Us', {
+    td5.textContent = Number(salaryValue).toLocaleString('en-US', {
       style: 'currency',
       currency: 'USD',
     });
