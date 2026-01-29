@@ -152,7 +152,12 @@ form.addEventListener('submit', (events) => {
   div.classList.add('notification');
   div.dataset.qa = 'notification';
 
-  const isValid = nameValue.length >= 4 && ageValue >= 18 && ageValue <= 90;
+  const isValid =
+    nameValue.length >= 4 &&
+    ageValue >= 18 &&
+    ageValue <= 90 &&
+    positionValue.length > 0 &&
+    salaryValue.length > 0;
 
   if (!isValid) {
     div.classList.add('error');
@@ -173,7 +178,11 @@ form.addEventListener('submit', (events) => {
     td2.textContent = positionValue.trim();
     td3.textContent = officeValue;
     td4.textContent = Number(ageValue);
-    td5.textContent = salaryValue;
+
+    td5.textContent = Number(salaryValue).toLocaleString('en-Us', {
+      style: 'currency',
+      currency: 'USD',
+    });
 
     tr.append(td1, td2, td3, td4, td5);
 
